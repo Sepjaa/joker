@@ -1,14 +1,12 @@
 import tensorflow as tf
 import csv
 import numpy as np
-
+MODEL_FOLDER = "Z:/models"
 END_OF_JOKE_CHARACTER = "∅"
 # The embedding dimension
 EMBEDDING_DIM = 256
 # Number of RNN units
-RNN_UNITS = 1024
-# Number of RNN layers
-LAYERS = 3
+RNN_UNITS = 2048
 
 jokes = []
 with open("shortjokes.csv", newline="") as csvfile:

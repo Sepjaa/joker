@@ -11,8 +11,8 @@ from tensorflow import keras
 import models
 import config
 
-EPOCHS = 20
-PREFIX = "{}-{}-{}".format(config.EMBEDDING_DIM, config.RNN_UNITS, config.LAYERS)
+EPOCHS = 128
+PREFIX = "{}-{}".format(config.EMBEDDING_DIM, config.RNN_UNITS)
 
 ids_dataset = tf.data.Dataset.from_tensor_slices(config.all_ids)
 seq_length = 100
@@ -27,7 +27,7 @@ def split_input_target(sequence):
 dataset = sequences.map(split_input_target)
 
 # Batch size
-BATCH_SIZE = 128
+BATCH_SIZE = 64
 
 # Buffer size to shuffle the dataset
 # (TF data is designed to work with possibly infinite sequences,
@@ -41,7 +41,7 @@ dataset = (
         .batch(BATCH_SIZE, drop_remainder=True)
         .prefetch(tf.data.experimental.AUTOTUNE))
 
-model = models.create(config.vocab_size, config.EMBEDDING_DIM, config.RNN_UNITS, config.LAYERS)
+model = models.create(config.vocab_size, config.EMBEDDING_DIM, config.RNN_UNITS)
 
 class CustomCallback(keras.callbacks.Callback):
 
@@ -49,8 +49,9 @@ class CustomCallback(keras.callbacks.Callback):
         self.model = model
 
     def on_epoch_end(self, epoch, logs=None):
-        self.model.save_weights("models/{}-chk-{}-{:.4f}".format(PREFIX, epoch, logs["loss"]))
-        print("Saved epoch {} with loss {}".format(epoch, logs["loss"]))
+        if epoch % 5 == 0:
+            self.model.save_weights("{}/{}-chk-{}-{:.4f}".format(config.MODEL_FOLDER, PREFIX, epoch, logs["loss"]))
+            print("Saved epoch {} with loss {}".format(epoch, logs["loss"]))
 
     def on_train_end(self, logs=None):
         self.model.save_weights("models/{}-end-{:.4f}".format(PREFIX, logs["loss"]))

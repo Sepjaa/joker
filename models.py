@@ -45,17 +45,12 @@ class OneStep(tf.keras.Model):
     return predicted_chars, states
 
 
-def create(vocab_size, embedding_dim, rnn_units, layers=1):
-    #model = Model(vocab_size, embedding_dim, rnn_units)
-    model = tf.keras.Sequential()
-    model.add(tf.keras.layers.Embedding(vocab_size, embedding_dim))
-    for i in range(0, layers):
-        model.add(tf.keras.layers.GRU(rnn_units, return_sequences=True))
-    model.add(tf.keras.layers.Dense(vocab_size))
+def create(vocab_size, embedding_dim, rnn_units):
+    model = Model(vocab_size, embedding_dim, rnn_units)
     lr = tf.keras.optimizers.schedules.ExponentialDecay(
         initial_learning_rate=0.002,
-        decay_steps=1000,
-        decay_rate=0.9)
+        decay_steps=3370,
+        decay_rate=0.95)
     optimizer = tf.keras.optimizers.Adamax(
     learning_rate=lr,
     beta_1=0.9,
@@ -67,7 +62,7 @@ def create(vocab_size, embedding_dim, rnn_units, layers=1):
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                   metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
 
-    model.summary();
+    #model.summary()
     return model
 
 class Model(tf.keras.Model):
