@@ -5,7 +5,7 @@ import tensorflow as tf
 # How many jokes to produce
 jokes = 200
 # How the jokes should start
-feed = "Knock knock. Who's there? "
+feed = "You "
 # Spiciness
 temperature = 0.2
 # Model filename without the .index or .data suffix
@@ -29,7 +29,7 @@ for i in range(jokes):
     i = 0
     while next_char.numpy() != end_char.numpy():
         i += 1
-        if i > 100:
+        if i > 500:
             break
         next_char, states = one_step_model.generate_one_step(next_char, states=states)
         if next_char.numpy() != end_char.numpy():
