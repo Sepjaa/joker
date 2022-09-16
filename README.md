@@ -82,7 +82,7 @@ The model might have induced that pants are something to be worn, but it has not
 
 Also, the dataset is scraped from internet and not sanitized in any way. This biases the model to be a casually racist potty mouth.
 
-The dataset also contains duplicates, which shows in the outputs. For example, jokes starting with "Knock" seem to always produce the same "Not Sally" -joke (see appendix [2]), which is highly prevalent in the dataset. Also, "Why did " will instantly lead to chickens crossing the road (see [1]). 
+The dataset also contains duplicates, which shows in the outputs. For example, jokes starting with "Knock" seem to always produce the same "Not Sally" -joke (see appendix [2]), which is highly prevalent in the dataset. Also, "Why did" will instantly lead to chickens crossing the road (see [1]). 
 
 ## What next?
 
