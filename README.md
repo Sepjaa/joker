@@ -98,7 +98,7 @@ There are multiple potential ways to improve this result:
 * [Kaggle: Short Jokes](https://www.kaggle.com/datasets/abhinavmoudgil95/short-jokes)
 
 ## Appendices
-###1. Generated "Why did" jokes - missing punchlines
+### 1. Generated "Why did" jokes - missing punchlines
 * Why did the chicken cross the road? To get to the other side!!!
 * Why did the chicken cross the road? To get to the other side! What did you think it is, if you can see the comment's say in sexy little shoulders, so do I go to another chance to work this way.
 * Why did the chicken cross the road? To get to the other side! Say "Sure!" Sex is getting out of hand. What is a tennis player's least favorite letter? Ur and is fun and again? Double standard
@@ -200,7 +200,7 @@ There are multiple potential ways to improve this result:
 * Why did the chicken cross the road? To get to the other side! ^^^I'm ^^^sorry.
 * Why did the bald man have sex with the boys? A: Because he had a whole family.
 
-###2. Generated "Knock knock" jokes - dataset duplicates biasing the output
+### 2. Generated "Knock knock" jokes - dataset duplicates biasing the output
 * Knock knock. Who's there? Allah. Allah who? Allahu Akbar !
 * Knock knock. Who's there? To To Who? Two who ? Antelement ! Anthony who starts to fit this in the fridge again !
 * Knock knock. Who's there? Not Sally. Have you ever seen an elephant in a restaurant and then ask yourself? You're scaring.
