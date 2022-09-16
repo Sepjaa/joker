@@ -49,7 +49,7 @@ def create(vocab_size, embedding_dim, rnn_units):
     model = Model(vocab_size, embedding_dim, rnn_units)
     lr = tf.keras.optimizers.schedules.ExponentialDecay(
         initial_learning_rate=0.002,
-        decay_steps=3370,
+        decay_steps=15000,
         decay_rate=0.95)
     optimizer = tf.keras.optimizers.Adamax(
     learning_rate=lr,
@@ -72,6 +72,7 @@ class Model(tf.keras.Model):
         self.gru = tf.keras.layers.GRU(rnn_units,
                                        return_sequences=True,
                                        return_state=True)
+        self.dropout = tf.keras.layers.Dropout(.2, input_shape=(vocab_size,))
         self.dense = tf.keras.layers.Dense(vocab_size)
 
     def call(self, inputs, states=None, return_state=False, training=False):
@@ -80,6 +81,7 @@ class Model(tf.keras.Model):
         if states is None:
             states = self.gru.get_initial_state(x)
         x, states = self.gru(x, initial_state=states, training=training)
+        x = self.dropout(x, training=training)
         x = self.dense(x, training=training)
 
         if return_state:

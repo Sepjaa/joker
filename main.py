@@ -11,7 +11,7 @@ from tensorflow import keras
 import models
 import config
 
-EPOCHS = 128
+EPOCHS = 256
 PREFIX = "{}-{}".format(config.EMBEDDING_DIM, config.RNN_UNITS)
 
 ids_dataset = tf.data.Dataset.from_tensor_slices(config.all_ids)
@@ -33,7 +33,7 @@ BATCH_SIZE = 64
 # (TF data is designed to work with possibly infinite sequences,
 # so it doesn't attempt to shuffle the entire sequence in memory. Instead,
 # it maintains a buffer in which it shuffles elements).
-BUFFER_SIZE = 10000
+BUFFER_SIZE = 100000
 
 dataset = (
     dataset
@@ -54,7 +54,7 @@ class CustomCallback(keras.callbacks.Callback):
             print("Saved epoch {} with loss {}".format(epoch, logs["loss"]))
 
     def on_train_end(self, logs=None):
-        self.model.save_weights("models/{}-end-{:.4f}".format(PREFIX, logs["loss"]))
+        self.model.save_weights("{}/{}-end-{:.4f}".format(config.MODEL_FOLDER, PREFIX, logs["loss"]))
         print("Saved end with loss {}".format(logs["loss"]))
 
 history = model.fit(dataset, epochs=EPOCHS, callbacks=[CustomCallback(model)])

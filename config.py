@@ -4,7 +4,7 @@ import numpy as np
 MODEL_FOLDER = "Z:/models"
 END_OF_JOKE_CHARACTER = "∅"
 # The embedding dimension
-EMBEDDING_DIM = 256
+EMBEDDING_DIM = 128
 # Number of RNN units
 RNN_UNITS = 2048
 
