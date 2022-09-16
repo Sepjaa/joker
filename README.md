@@ -64,240 +64,235 @@ For example when inputting the feed "You should always " with varying temperatur
 
 | Temperature        |  Jokes
 | ------------- |:-------------:|
-| 0.01 | <ul><li>You should always say that you're a computer screen.</li><li>You should always stay on the same pin in the morning.</li><li>You should always say "I don't have a headache". She said "No, but I have done 53 -- that's all the sailors I could screw in one night."</li><li>You should always be pretty fun.</li><li>You should always be the cord for so long that I won't stop laughing.</li></ul> |
-| 0.1 | <ul><li>You should always say that you're a great room for the first 100 times.</li><li>You should always be there for them.</li><li>You should always see it.</li><li>You should always bring you up for your birthday presents.</li><li>You should always be a lie.</li></ul> |
-| 0.5 | <ul><li>You should always want to buy a bill And then he walked out because he couldn't understand.</li><li>You should always be there for them.</li><li>You should always worry about the time when I'm dead.</li><li>You should always be for fun.</li><li>You should always remember when you watch.</li></ul>
-| 1 | <ul><li>You should always choose to be in the rear van *"I mailed you. You put them out now?"</li><li>You should always shoot a dead milk."</li><li>You should always wear pants.</li><li>You should always know what it's like to be more pocket for you.</li><li>You should always tell you that this is a joke your abs.</li></ul>
-| 2 | <ul><li>You should always act a little Hueken ,gek....becave breed multiple grapefruit.</li><li>You should always piss hoe plosion.</li><li>You should always buy 13hsh.</li><li>You should always want pieces. Old people!:)LEAVER.</li><li>You should always 340a/:#SNRKFFW (1); Ef</li></ul>
-
+| 0.01 | <ul><li>You should always be straight up to the side of the road.</li><li>You should always be there for you.</li><li>You should always be straight.</li></ul> |
+| 0.5 | <ul><li>You should always be on top of those planets in the debt.</li><li>You should always be friends with Steve. Denim denim denim</li><li>You should always be stereotyped.</li></ul>
+| 2 | <ul><li>You should always' call them, 'who is Clown's, FO'TER etcn-kilts, sex 120J' ]vydrower</li><li>You should always WHY MARRIED WIFE HIT- FUKN.</li><li>You should always</li></ul>
 
 ## Data sources and AI methods
 Data used to train the model is from [short-jokes-dataset](https://github.com/amoudgl/short-jokes-dataset), which features 231,657 short jokes scraped from various websites.
 This dataset is copied directly to this repository for use in training.
 
 ## Challenges
-While this surprisingly does produce somewhat coherent English, it's hilarity is up for debate. For example, while "You should always wear pants." is a wholesome tip you might want to take on in the workplace, it's not really what we wanted.
+While this surprisingly does produce somewhat coherent English, it's hilarity is up for debate. For example, while "You should always be there for you." is a wholesome tip you might want to take on, it's not really what we wanted.
 
-The model might have induced that pants are something to be worn, but it has not learned that the joke should end in a punchline. See for example in appendix [1]: "Why did my dog speak to complete it?". Guess we'll never know. 
+The model might have induced basic sentence structure, but it has not learned the essence of a joke, which should end in a punchline. See for example in appendix [1]: "Why did you buy milk in the mail?". Guess we'll never know. 
 
 Also, the dataset is scraped from internet and not sanitized in any way. This biases the model to be a casually racist potty mouth.
 
-The dataset also contains duplicates, which shows in the outputs. For example, jokes starting with "Knock" seem to always produce the same "Not Sally" -joke (see appendix [2]), which is highly prevalent in the dataset. Also, "Why did " will instantly lead to chickens crossing the road (see [1]). 
+The dataset also contains duplicates, which shows in the outputs. For example, jokes starting with "Knock" seem to always produce the same "Not Sally" -joke (see appendix [2]), which is highly prevalent in the dataset. Also, "Why did" will instantly lead to chickens crossing the road (see [1]). 
 
 ## What next?
-
 There are multiple potential ways to improve this result: 
 * The training process + model parameters could be optimized to get a better fit
 * A sanitized, structured and more comprehensive dataset
 * The model parameter size is pretty small for natural language processing
 * A pre-trained general natural language processor could be used as a basis
 
-
 ## Acknowledgments
 
 * [Kaggle: Short Jokes](https://www.kaggle.com/datasets/abhinavmoudgil95/short-jokes)
 
 ## Appendices
-### 1. Generated "Why did" jokes - missing punchlines
-* Why did the chicken cross the road? To get to the other side!!!
-* Why did the chicken cross the road? To get to the other side! What did you think it is, if you can see the comment's say in sexy little shoulders, so do I go to another chance to work this way.
-* Why did the chicken cross the road? To get to the other side! Say "Sure!" Sex is getting out of hand. What is a tennis player's least favorite letter? Ur and is fun and again? Double standard
-* Why did the parrot walk into a bar? For the BOOOO! someone else does.
-* Why did the mushroom say "I don't know" means "statistics show that they are both right."
-* Why did the chicken cross the road? He didn't want to look like the dark circle.
-* Why did the photo start to listen.
-* Why did the chicken cross the road? To get to the other side. Why did the chicken cross the road? To get to the other side. Sorry.
-* Why did you steal the punchline a lot?
-* Why did the chicken cross the road? **I This Is A Rocky Mountain.
-* Why did you drive this thing?"
-* Why did the chicken cross the road? (If you know what I mean, what is this for weeks' thing.
-* Why did the chicken cross the road? A brick.
-* Why did the blonde get fired from his job at the sperm bank? He was stumped.
-* Why did he carry the woodchupp? Because she couldn't see any of his cat.
-* Why did the chicken cross the road? He was stuck on the couch the waitress of the kitchen.
-* Why did the chicken cross the road? A: To get to the second hand shop.
-* Why did you do that?
-* Why did you pay for this? He was a little hoarse.
-* Why did you call him Chinese food? Neither have they
-* Why did the pig say the roof? I would like to get a little head.
-* Why did the bald man go to the hospital? Because he was stuck on the chicken.
-* Why did the teacher take the wheel in his pants? Because he couldn't keep his camera too!
-* Why did Will Smith for this subreddit? That was a big trap
-* Why did the little girl who stole my computer screen from her hands?
-* Why did the chicken cross the road? Because I put on the wrong sock this morning.
-* Why did my dog chase his butt? It was a basic-skitted speaker
-* Why did the chicken cross the road? Because it was a fangoine.
-* Why did the chicken cross the road? To get to the other side. Sorry.
-* Why did I come from? To my mate that said "WILL a Merced And embroy" he said "who do you let him on?" "I still love Vista, baby!"
-* Why did you get it you can get anything to die?" The man replies, "I think not." He asks why, since the cannibal was all right all those heroin addicts collecting edition.
-* Why did the chicken cross the road? To get to the other side.
-* Why did the chicken cross the road? To get to the other side! Say "you're scared?" The pirate replies, "Arrr, I'll be back."
-* Why did they drink all the green? Cause they're always coming in a little behind.
-* Why did the chicken cross the road? To get away from the gym.
-* Why did the chicken cross the road? To get to the other side.
-* Why did the chicken cross the road? To get to the other side. The long run.
-* Why did the police sit on the toilet? Because it was two tired.
-* Why did the chicken cross the road? His dick was stuck in the chicken.
-* Why did the chicken cross the road? A: To prove the delivery on his butt. It was a positive side.
-* Why did the chicken cross the road? Because he was drunk.
-* Why did the hipster burn his tongue?
-* Why did the chicken cross the road? [Help with copy of all time, but not a solution] *sees a startle dealer on a bike at a concert*
-* Why did you get the cat ?
-* Why did you do that?
-* Why did you?
-* Why did you call him Mad? Her: I meant will you take the stereo. Just lost in a movie.
-* Why did you stop me? Me: I'm not sure. My sister is in her house and sleep with her finger piercing.
-* Why did you buy me donuts?
-* Why did she forget he was living the cat
-* Why did Boy scort?
-* Why did you bring her to come inside?
-* Why did you get it?
-* Why did you get up?
-* Why did the boy take up his left side? He claimed that he is still alive.
-* Why did the chicken cross the road? To get to the other side! Straight until your Facebook friends tell you.
-* Why did the sign say to The Allah Go? Allah Akbar
-* Why did you do it? -No because you're not allowed to have sex with the same as you do.
-* Why did you bring them to the bathroom?
-* Why did the chicken cross the road? His dick was stuck in a tree.
-* Why did the chicken cross the road? To get to the other side. So the corn has a punch line.
-* Why did the balloon fall off the swing? Because she had no arms. Knock knock Who's there? Not Sally.
-* Why did you get in here
-* Why did the parrot?
-* Why did the chicken cross the road.
-* Why did the chicken cross the road? To get to the other side. Stop crying and take your order!
-* Why did the chicken cross the road? He was chasing his coffee before it was cool.
-* Why did the chicken cross the road To get to the other slide
-* Why did the hipster burn his tongue? He drank the car off the beaker before it was cool.
-* Why did the chicken cross the road? (A joke from my son)
-* Why did you learn the land car shooting at the club? With a shotgun at the Doritos something.
-* Why did the chicken cross the road? To get it because he had no porpoise in the alphabet.
-* Why did the chicken cross the road? To get to the other side. ^^^I'm ^^^^^so ^^sorry.
-* Why did the chicken cross the road? A: To get to the second hand shop.
-* Why did the chicken cross the road? To get to the other side... So I hit her in the hands.
-* Why did the chicken cross the road? To get to the other side. There was a man who lost a hundred dollar bill.
-* Why did he just say "YO MAMA IS SO FAT!" *stares at puberty back from a class*
-* Why did you eat you?"
-* Why did you die for the next season?
-* Why did the chicken cross the road? He didn't have the guts to save the highest star.
-* Why did the man with the left ear arriving? He didn't want to get into the chamber.
-* Why did the chicken cross the road? To get to the other side. Sorry.
-* Why did the chicken cross the road? I don't know but he was a sign that said "Tim Dead" but then I realized they were called SpearThis instead.
-* Why did my son go to the baseball team? Because she was a super power.
-* Why did my dog speak to complete it?
-* Why did you fall on the ground? I'll be here all week.
-* Why did the bald man put his gas bill into the cement? He saw the gas bill
-* Why did the chicken cross the road? To keep the character boards.
-* Why did the chicken cross the road? He was chasing the boys old windows.
-* Why did the scarecrow win a road? He pasta away
-* Why did my dad say I'm a little cunt I can't remember her name
-* Why did the student go to see the new movie "Constipation"?
-* Why did you say you were terrible? I have a boyfriend.
-* Why did my brother say "she won't be able to eat on your face?"
+### 1. 100 generated "Why did" jokes - missing punchlines
+* Why did the console gamer cross the road? To get to the other side!
+* Why did the blonde get fired from the bakery? Because he was too far out man!
+* Why did the chicken cross the road? I pushed her over.
+* Why did the chicken cross the road? Because it was too chicken!!!
+* Why did the short guy cross the road? Because he was too far out, man
+* Why did the bicycle fall out? Good native American children.
+* Why did the chicken cross the road? To get to the other side!!! And the son was crushed by a troll.
+* Why did the chicken cross the road? I don't know, but the flag is a big plus.
+* Why did you leave the party? By reposting.
+* Why did the little girl want to be a pair of shoes? (So they turned my bag into the tits)
+* Why did the little girl go on a date? She was a fungi.
 * Why did Sally fall off the swing?
-* Why did you do it before it's cool.
-* Why did Santa claus throw the shit out of the sky doing on her wedding day? Because he saw the gas bill
-* Why did the skeleton cross the road? To get to the sack!
-* Why did the chicken cross the road? To get to the other side! ^^^I'm ^^^sorry.
-* Why did the bald man have sex with the boys? A: Because he had a whole family.
+* Why did you come in with her clothes in the garage?
+* Why did the blonde count to 10? Because We were talking about a woman with a platypus and had to hire a fork in the comments.
+* Why didn't the chicken cross the road? To get to the other side.
+* Why did the semen cross the road? Because I put on the wrong sock this morning.
+* Why did my brother say that?!?!?
+* Why did you make me a sandwich?
+* Why did you all say that?
+* Why did you call her no mate home?"
+* Why did you take the stereo type? "Well, I guess it's that my phone number, I am."
+* Why did you drive this thing"
+* Why did the seam sing singer in?
+* Why did Bill Cosby go to the Olympics? He wanted to finish a race.
+* Why did the student fight him on the last six months of our son when he went out for the same driver? He was a little bit of asshole.
+* Why did the chicken cross the road? To get to the other side! Why don't you turn a fruit into a pool timer all the time?
+* Why didn't the chicken cross the road? Because he was dead
+* Why didn't you buy that defendant?
+* Why didn't you?
+* Why did you get him to?!?
+* Why did you get the cock in the car?
+* Why did the chicken cross the road? (No. Neither has the biggest day of the year...)
+* Why did you say something to do with this one?" He said, "No, but I think it's funny when I found out that Santa did wrong."
+* Why didn't you get the cat food?
+* Why didn't you?
+* Why did you bring all the pictures of your girlfriend's dog?
+* Why did you buy that? How? (Password to me) I was gonna get a reaction.
+* Why did hitler commit suicide? He saw the gas bill.
+* Why did the chicken cross the road? To get to the other side.
+* Why did the chicken cross the road? To get to the other side... ...the rock and on the other side.
+* Why did the chicken cross the road? To get to the other side. The second man will be the scariest thing to say to a girl is basically a little prick.
+* Why did you just say that it was the best moment of the year when the power is going to be called a "doctor to pull out" *clicks cat* *takes breath off* *sees a baby in a bag* *puts on green power on bangs*
+* Why did you eat?
+* Why did you get it?" "I don't know, I meant for the kids" and then I pull out.
+* Why did my dad come in
+* Why didn't you?
+* Why didn't you?
+* Why did you buy milk in the mail?
+* Why didn't the man get his hair so he could see that coming
+* Why did the banker bring him instead
+* Why did the chicken cross the road? He was charged with battery!
+* Why did the console player get with the wheel in his pants? Because he was a fungi.
+* Why did the chicken cross the road? He wanted to get a long little doggy.
+* Why did the boy fall off his back? He was too far out, man
+* Why did a blonde bring a lot of shoes.
+* Why did the chicken cross the road? He wanted to go to the Costco ball.
+* Why did the chicken cross the road? Because he wasn't charged.
+* Why did the chicken cross the road? To get to the other side. ^^^^I'll ^^^^^see ^^^myself^^^out.
+* Why did the suicidal punchline start crying? And why did he manage to put the punchline in the title?
+* Why did the salad dressing operation was growing up? That's the last time I fall asleep in the ground with my burrito.
+* Why did the chicken cross the road? He was getting fat!
+* Why did Snow White go to the corner store? He was too far out man!
+* Why did the chicken cross the road? To get to the other side...
+* Why did the police officer say to the baker? Bow was the biggest dick in the chair.
+* Why did the man go to the conclusion? Because he was a little head
+* Why did the farmer show his wife affect back to his grandmother? Because he was a fungi.
+* Why did the chicken cross the road? To get to the other side. Sorry.
+* Why did the chicken cross the road? I ran into my ears !
+* Why didn't you get a second opinion? Hurricane Sanders must be funny.
+* Why did the chicken cross the road? *Hello from the other side*
+* Why did I read by some other good shit? Fred: I don't give a fuck what you think.
+* Why did I come in?
+* Why did you get it?
+* Why did you go to college?
+* Why did you say I'm a bad person
+* Why did I just say ME: [sips my ass on tinder with my hands] Learn from your mom
+* Why did you just give me a beer?
+* Why did you make homework all year?
+* Why didn't the skeleton say to the other black man? He was a little cock-eyed.
+* Why did you do it before it was cool? Christopher Walken
+* Why did the man with a female army in a little boy who was half empty from the first condom? He was too far out, man
+* Why did the chicken cross the road? I don't know but a sheep in the office.
+* Why did the chicken cross the road? To get to the other side. The chicken crossed the road when he was asked to see his wife after he received a history experience.
+* Why did the blonde bring him to court? He heard that they deserve it.
+* Why did the chicken cross the road? To get to the other side. Sorry.
+* Why did I come out of the classic country? It was a complete disaster but now it's just because they don't have any bathrooms
+* Why did the Mexican guy put his soup to the ball? A: Oh shit I dunno interesting
+* Why didnt you see?
+* Why did you tell me that your face lived in?
+* Why did you eat the baby?
+* Why did the chicken cross the road? *winks* He was a secret *points to back of cat* *throws a piano out of club* "Don't you mean cats."
+* Why did you bring your cat to my house?
+* Why didn't you? Me: I didn't see you the rest of the judge: that one's really into strangers.
+* Why did you just say that? *laughs* I didnt see that coming
+* Why did you ask god a lot?
+* Why did the cow get away with the time on that?
+* Why did the farmer get a straight toner?
+* Why did you fall in love with me?
+* Why did you just say that?
+* Why did you get in there?"
 
-### 2. Generated "Knock knock" jokes - dataset duplicates biasing the output
-* Knock knock. Who's there? Allah. Allah who? Allahu Akbar !
-* Knock knock. Who's there? To To Who? Two who ? Antelement ! Anthony who starts to fit this in the fridge again !
-* Knock knock. Who's there? Not Sally. Have you ever seen an elephant in a restaurant and then ask yourself? You're scaring.
+### 2. 100 generated "Knock knock" jokes - dataset duplicates biasing the output
+* Knock knock. Who's there? Control Freak who? Ellen Pao has a different species of his own death.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? To To Who? The tomato is the worst.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Knock Knock Who's there? Steam who? BOOOOOOOOOO!!!!!
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? To To Who? Two Wongs tommy pointed out, I had to put my foot down.
 * Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally. What did the man say to the other cow? Some say the tip of the world revolves around them
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally. What did the blonde say when he saw the new secretary? A dead golden retriever
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? An Astronaut - Yeah I know you had me at this time. What do you mean ? When we get to see if you can
 * Knock knock. Who's there? The chicken.
 * Knock knock. Who's there? The chicken.
-* Knock knock. Who's there? An Astronaut who? All of them are already in the same place.
+* Knock knock. Who's there? An ass. A man who likes to party.
+* Knock knock. Who's there? 9/11 9/11 who? You said you'd never forget. Why don't you take a shower with a friend?
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? A natual who tries to know how to count to get your palm red.
+* Knock knock. Who's there? Motoricable. Edit: What is it that if you think the other person is dying
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Hillary Clinton. The problem with political jokes. I am a successful breakfast.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Orange. Orange who? Orange you glad I didn't see you this morning.
+* Knock knock. Who's there? Homeress. Don't you.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Hankmand. What do you want? His wife Me: OK I'LL BE BACH.
+* Knock knock. Who's there? To To who? To *weap* interrupts. How did they get to the hospital? Because they don't want to talk about it.
+* Knock knock. Who's there? Dave. Dave who? Dave proceeds to be a doctor who knows where all the naughty girls have.
+* Knock knock. Who's there? I am Alright.... Well you should have put a little tiny degone out there so my boyfriend caught me watching.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Interrupting cow. Interrupting cow who? How do you breathe through that fish? **Shhh** what song her heads are before you have to carry your bags of warm weapon?
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? An Astronaut. Here you have to be trapped in a lot of potatoes. They are always stuffed.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? The chicken.
-* Knock knock. Who's there? A whom? Who's there? * The Chicken.
+* Knock knock. Who's there? Not One. Something a pricks are on the outside
+* Knock knock. Who's there? The Pilot. Let me in.
+* Knock knock. Who's there? Freedom. - what were you eating?
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? To To Who? Two - Who? A guy who fits into your wall yet.
+* Knock knock. Who's there? Interrupting cow I told you to make the antics at the end.
+* Knock knock. Who's there? Interrupting cow Interrupting cow. Will it be? Dad: Yeah well I was just watching a few people out of this bar.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? * The chicken.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? King Tucks... Chris Brown.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? An American who? A thief with a start that lost a life.
+* Knock knock. Who's there? Doctor. Dad who? How'd you know?
+* Knock knock. Who's there? The chicken.
+* Knock knock. Who's there? To To who? To whom!
+* Knock knock. Who's there? To To Whom? Woo woo o. hoo and don't start anything!
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? To To Who? Two - The pirate replies: This is a fuck up!
+* Knock knock. Who's there? Antelope. One British with a boot.
+* Knock knock. Who's there? To To Who? The Pope to the dentist.
+* Knock knock. Who's there? Antenopic and who? A salt in a cup.
 * Knock knock. Who's there? Not Sally.
 * Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? To To Who? The White House !
 * Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? An Astronaut A cyclist? A whore would be a fucking cool this where.
+* Knock knock. Who's there? Smerry Chocolate Chips - Who? Yes. Person I don't know. The answer to this before you died.
 * Knock knock. Who's there? Not Sally.
-* Knock knock. Who's there? Not Sally.... English. Your move, Jesus.
+* Knock knock. Who's there? King Kong. Orca Hi Panos?
+* Knock knock. Who's there? Benjamin Bender.
 * Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? An Astronaut you wanna be in the mood? A HIRP-CHILERE PIGSTORM
+* Knock knock. Who's there? * The Chicken.
+* Knock knock. Who's there? **General *ethnocrat* *had her soul to Satan.*
+* Knock knock. Who's there? Hot who? Be Back In Casey Anyone to think that's the last time I fell for it.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? The chicken.
+* Knock knock. Who's there? Hanna Walkhah.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? To To who? *Typo, I want to go to death sentence.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? Not Sally. What do you call a cow with no legs? Ground beef.
+* Knock knock. Who's there? Interrupting cow. Interrupting cow who? Allahu Akbar bod
+* Knock knock. Who's there? The chicken.
+* Knock knock. Who's there? The chicken.
+* Knock knock. Who's there? -The chicken.
+* Knock knock. Who's there? Not Sally.... Clark Kent: *in the dark* "Did you go to the bathroom?" "No, I'm Leaving." Cop: What an idea who? *Holds up Pope Francisco Party with no legs falls out of a boat*
+* Knock knock. Who's there? A: A Budwaiser. A tap water.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? King Traw! Rhew. DO THE DANK TO MY CAT?!
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? To To Who? The Who's There? The chicken.
+* Knock knock. Who's there? Not Sally.
+* Knock knock. Who's there? To To Who? The three themed perfect scandal it would be a chicken.
