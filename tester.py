@@ -2,14 +2,18 @@ import models
 import time
 import config
 import tensorflow as tf
+# How many jokes to produce
+jokes = 200
+# How the jokes should start
+feed = "Knock knock. Who's there? "
+# Spiciness
+temperature = 0.2
+# Model filename without the .index or .data suffix
+model_filename = "128-2048-end-0.6664"
 
-jokes = 10
-feed = "You"
-temperature = 0.1
-file = "{}/{}".format(config.MODEL_FOLDER, "256-2048-chk-105-0.5367")
+file = "{}/{}".format(config.MODEL_FOLDER, model_filename)
 
-# model = tf.saved_model.load("models/2048-chk-5-1.1497799158096313")
-model = models.create(config.vocab_size, config.EMBEDDING_DIM, config.RNN_UNITS)
+model = models.create(config.vocab_size, config.EMBEDDING_DIM, config.RNN_UNITS, config.DROPOUT)
 
 model.load_weights(file)
 
@@ -25,8 +29,8 @@ for i in range(jokes):
     i = 0
     while next_char.numpy() != end_char.numpy():
         i += 1
-        if(i > 500):
-            break;
+        if i > 100:
+            break
         next_char, states = one_step_model.generate_one_step(next_char, states=states)
         if next_char.numpy() != end_char.numpy():
             joke.append(next_char)
@@ -34,6 +38,3 @@ for i in range(jokes):
     print(joke[0].numpy().decode('utf-8'))
     next_char = tf.constant([feed])
 
-end = time.time()
-# print(result[0].numpy().decode('utf-8'), '\n\n' + '_' * 80)
-print('\nRun time:', end - start)

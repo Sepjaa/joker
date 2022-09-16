@@ -1,5 +1,5 @@
 import tensorflow as tf
-
+import config
 class OneStep(tf.keras.Model):
   def __init__(self, model, chars_from_ids, ids_from_chars, temperature=1.0):
     super().__init__()
@@ -7,16 +7,6 @@ class OneStep(tf.keras.Model):
     self.model = model
     self.chars_from_ids = chars_from_ids
     self.ids_from_chars = ids_from_chars
-
-    # Create a mask to prevent "[UNK]" from being generated.
-    skip_ids = self.ids_from_chars(['[UNK]'])[:, None]
-    sparse_mask = tf.SparseTensor(
-        # Put a -inf at each bad index.
-        values=[-float('inf')]*len(skip_ids),
-        indices=skip_ids,
-        # Match the shape to the vocabulary
-        dense_shape=[len(ids_from_chars.get_vocabulary())])
-    self.prediction_mask = tf.sparse.to_dense(sparse_mask)
 
   @tf.function
   def generate_one_step(self, inputs, states=None):
@@ -31,8 +21,6 @@ class OneStep(tf.keras.Model):
     # Only use the last prediction.
     predicted_logits = predicted_logits[:, -1, :]
     predicted_logits = predicted_logits/self.temperature
-    # Apply the prediction mask: prevent "[UNK]" from being generated.
-    predicted_logits = predicted_logits + self.prediction_mask
 
     # Sample the output logits to generate token IDs.
     predicted_ids = tf.random.categorical(predicted_logits, num_samples=1)
@@ -45,20 +33,10 @@ class OneStep(tf.keras.Model):
     return predicted_chars, states
 
 
-def create(vocab_size, embedding_dim, rnn_units):
-    model = Model(vocab_size, embedding_dim, rnn_units)
-    lr = tf.keras.optimizers.schedules.ExponentialDecay(
-        initial_learning_rate=0.002,
-        decay_steps=15000,
-        decay_rate=0.95)
-    optimizer = tf.keras.optimizers.Adamax(
-    learning_rate=lr,
-    beta_1=0.9,
-    beta_2=0.999,
-    epsilon=1e-07,
-    name='Adamax',
-    )
-    model.compile(optimizer=optimizer,
+def create(vocab_size, embedding_dim, rnn_units, dropout):
+    model = Model(vocab_size, embedding_dim, rnn_units, dropout)
+
+    model.compile(optimizer=config.OPTIMIZER,
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                   metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
 
@@ -66,13 +44,13 @@ def create(vocab_size, embedding_dim, rnn_units):
     return model
 
 class Model(tf.keras.Model):
-    def __init__(self, vocab_size, embedding_dim, rnn_units):
+    def __init__(self, vocab_size, embedding_dim, rnn_units, dropout):
         super().__init__(self)
         self.embedding = tf.keras.layers.Embedding(vocab_size, embedding_dim)
         self.gru = tf.keras.layers.GRU(rnn_units,
                                        return_sequences=True,
                                        return_state=True)
-        self.dropout = tf.keras.layers.Dropout(.2, input_shape=(vocab_size,))
+        self.dropout = tf.keras.layers.Dropout(dropout, input_shape=(vocab_size,))
         self.dense = tf.keras.layers.Dense(vocab_size)
 
     def call(self, inputs, states=None, return_state=False, training=False):

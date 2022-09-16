@@ -11,7 +11,6 @@ from tensorflow import keras
 import models
 import config
 
-EPOCHS = 256
 PREFIX = "{}-{}".format(config.EMBEDDING_DIM, config.RNN_UNITS)
 
 ids_dataset = tf.data.Dataset.from_tensor_slices(config.all_ids)
@@ -26,22 +25,15 @@ def split_input_target(sequence):
 
 dataset = sequences.map(split_input_target)
 
-# Batch size
-BATCH_SIZE = 64
 
-# Buffer size to shuffle the dataset
-# (TF data is designed to work with possibly infinite sequences,
-# so it doesn't attempt to shuffle the entire sequence in memory. Instead,
-# it maintains a buffer in which it shuffles elements).
-BUFFER_SIZE = 100000
 
 dataset = (
     dataset
-        .shuffle(BUFFER_SIZE)
-        .batch(BATCH_SIZE, drop_remainder=True)
+        .shuffle(config.BUFFER_SIZE)
+        .batch(config.BATCH_SIZE, drop_remainder=True)
         .prefetch(tf.data.experimental.AUTOTUNE))
 
-model = models.create(config.vocab_size, config.EMBEDDING_DIM, config.RNN_UNITS)
+model = models.create(config.vocab_size, config.EMBEDDING_DIM, config.RNN_UNITS, config.DROPOUT)
 
 class CustomCallback(keras.callbacks.Callback):
 
@@ -49,7 +41,7 @@ class CustomCallback(keras.callbacks.Callback):
         self.model = model
 
     def on_epoch_end(self, epoch, logs=None):
-        if epoch % 5 == 0:
+        if epoch % config.MODEL_CHECKPOINT_INTERVAL_EPOCHS == 0:
             self.model.save_weights("{}/{}-chk-{}-{:.4f}".format(config.MODEL_FOLDER, PREFIX, epoch, logs["loss"]))
             print("Saved epoch {} with loss {}".format(epoch, logs["loss"]))
 
@@ -57,5 +49,5 @@ class CustomCallback(keras.callbacks.Callback):
         self.model.save_weights("{}/{}-end-{:.4f}".format(config.MODEL_FOLDER, PREFIX, logs["loss"]))
         print("Saved end with loss {}".format(logs["loss"]))
 
-history = model.fit(dataset, epochs=EPOCHS, callbacks=[CustomCallback(model)])
+history = model.fit(dataset, epochs=config.EPOCHS, callbacks=[CustomCallback(model)])
 
